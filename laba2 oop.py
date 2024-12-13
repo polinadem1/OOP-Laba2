@@ -22,7 +22,7 @@ def parse_csv(file_path):
 
 
 def parse_xml(file_path):
-    "Парсит XML-файл и возвращает данные"
+    #Парсит XML-файл и возвращает данные
     data = []
     try:
         if not os.path.exists(file_path):
@@ -45,7 +45,7 @@ def parse_xml(file_path):
 
 
 def process_data(data):
-    "Обрабатывает данные и формирует статистику"
+    #Обрабатывает данные и формирует статистику
     try:
         # считаем дублирующиеся записи
         duplicates = Counter(tuple((key, str(value)) for key, value in row.items()) for row in data)
@@ -66,7 +66,7 @@ def process_data(data):
 
 
 def display_statistics(duplicates, buildings_by_city_and_floors, processing_time):
-    "Выводит статистику"
+    #Выводит статистику
     print("\nСводная статистика:")
 
     print("\nДублирующиеся записи:")
